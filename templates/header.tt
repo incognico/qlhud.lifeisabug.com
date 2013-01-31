@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+[% debug %]
+-->
+<html>
+<head>
+   <!-- Meta Tags -->
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+   <meta name="description" content="QLHUD is a platform where anyone can download and share custom HUDs for Quake Live. The #1 Quake Live custom HUD resource!">
+
+   <!-- CSS -->
+   <link rel="stylesheet" type="text/css" title="Default" href="[% url %]/files/page/style.css">
+   <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono:400' rel='stylesheet' type='text/css'>
+
+   [% IF css && currpage != 'index' %]
+   <!-- Additional css -->
+   <style type="text/css">
+      [% css %]
+   </style>
+   [% END %]
+
+   <!-- Favicon -->
+   <link rel="shortcut icon" href="[% url %]/favicon.ico" type="image/x-icon">
+
+   <!-- RSS -->
+   <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="[% url %]/rss">
+
+   <!-- Title -->
+   <title>[% title %]</title>
+
+   <!-- Analytics -->
+   <script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-38125562-1']);
+   _gaq.push(['_trackPageview']);
+   (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+</script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<script src="[% url %]/files/page/ie7-js/IE8.js"></script>
+<![endif]-->

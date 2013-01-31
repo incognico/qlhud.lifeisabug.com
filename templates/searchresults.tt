@@ -1,0 +1,24 @@
+[% INCLUDE header.tt %]
+   <div id="menu">
+      <ul>
+           <li><a href="[% url %]/" title="Browse custom HUDs for Quake Live">Browse</a></li>
+           <li><a href="[% url %]/random" title="Random custom HUDs">Random</a></li>
+           <li><a href="[% url %]/authors" title="Browse custom HUDs by author">Authors</a></li>
+           <li><a href="[% url %]/search" title="Search a custom HUD">Search</a></li>
+           <li><a href="[% url %]/upload" title="Upload a custom HUD">Upload</a></li>
+           <li><a href="[% url %]/about" title="About custom HUDs for Quake Live">About</a></li>
+      </ul>
+      <p>Don't know how to use a <strong>custom HUD</strong>? Check out holysh1ts <a href="http://www.holysh1t.net/quakelive-custom-hud-install-guide/" title="holysh1t.net: Custom HUD install guide">custom HUD install guide</a></p>
+   </div>
+   <div id="page">
+      <h1>Custom HUDs for Quake Live</h1>
+      [% UNLESS huds.size %]
+      <p>Nothing found :(</p>
+      <p><a href="javascript:history.go(-1);">Go back</a></p>
+      [% ELSE %]
+         [% FOREACH hud IN huds.values.nsort('id').reverse %]
+            [% INCLUDE hud.tt %]
+         [% END %]
+      [% END %]
+   </div>
+[% INCLUDE footer.tt %]

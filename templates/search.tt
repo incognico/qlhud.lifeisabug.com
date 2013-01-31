@@ -1,0 +1,33 @@
+[% INCLUDE header.tt %]
+	<div id="menu">
+		<ul>
+           <li><a href="[% url %]/" title="Browse custom HUDs for Quake Live">Browse</a></li>
+           <li><a href="[% url %]/random" title="Random custom HUDs">Random</a></li>
+           <li><a href="[% url %]/authors" title="Browse custom HUDs by author">Authors</a></li>
+           <li><strong title="Search a custom HUD">Search</strong></li>
+           <li><a href="[% url %]/upload" title="Upload a custom HUD">Upload</a></li>
+           <li><a href="[% url %]/about" title="About custom HUDs for Quake Live">About</a></li>
+		</ul>
+		<p>Here you can search for one or more <strong>custom HUD</strong>s. You can search by Author, Description and the HUDs unique identifier</p>
+	</div>
+	<div id="page">
+		<h1>Search a custom HUD for Quake Live</h1>
+		<form method="POST" action="[% url %]/search" enctype="multipart/form-data">
+			<div class="line">
+				<span class="label">Author:</span>
+				<span class="field"><input type="text" size=20 name="author" placeholder="Search by author name (or parts of it)..."></span>
+			</div>
+			<div class="line">
+				<span class="label">Description:</span>
+				<span class="field"><input type="text" size=20 name="description" placeholder="Search by description contents..."></span>
+			</div>
+         <div class="line">
+            <span class="label">If both fields are filled, the search will be AND combined</span>
+         </div>
+			<div class="button">
+				<input type="hidden" name="dest" value="search">
+				<input type="submit" value="Search">
+			</div>
+		</form>
+	</div>
+[% INCLUDE footer.tt %]

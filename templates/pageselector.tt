@@ -1,0 +1,17 @@
+[% IF pages.size > 1 %]
+<form name="goto" action="[% url %]/" method="POST" onsubmit="return validateGoto();">
+   <p>
+       <span class="bold">Page:</span>
+      [% FOREACH p IN pages %]
+         [% IF p == page || p == '..' %]
+            [% p %]
+         [% ELSE %]
+         <a href="[% url %]/[% p %]" title="Go to page [% p %]">[% p %]</a>
+         [% END %]
+      [% END %]
+      <span class="spacer"></span> Go to page:
+      <input class="center" type="text" size="3" name="page">
+      <input type="submit" value="Go">
+   </p>
+</form>
+[% END %]

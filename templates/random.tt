@@ -1,0 +1,24 @@
+[% INCLUDE header.tt %]
+   <div id="menu">
+      <ul>
+         <li><a href="[% url %]/" title="Browse custom HUDs for Quake Live">Browse</a></li>
+         <li><strong title="Random custom HUDs">Random</strong></li>
+         <li><a href="[% url %]/authors" title="Browse custom HUDs by author">Authors</a></li>
+         <li><a href="[% url %]/search" title="Search a custom HUD">Search</a></li>
+         <li><a href="[% url %]/upload" title="Upload a custom HUD">Upload</a></li>
+         <li><a href="[% url %]/about" title="About custom HUDs for Quake Live">About</a></li>
+      </ul>
+      <p>Click on the image to display the unique page of the <strong>HUD</strong>, useful for hotlinking or showing it to friends</p>
+      <p>Don't know how to use a <strong>custom HUD</strong>? Check out holysh1ts <a href="http://www.holysh1t.net/quakelive-custom-hud-install-guide/" title="holysh1t.net: Custom HUD install guide">custom HUD install guide</a></p>      
+      <p>[% totalhuds %] <strong>custom HUD</strong>s have been added so far - share yours too!</p>
+   </div>
+   <div id="page">
+      <h1>Random custom HUDs</h1>
+		<div class="center">
+         <p>Click <a title="Refresh this page" href="[% url %]/random">refresh</a> (or press F5) to show [% random %] new random <strong>HUD</strong>s</p>
+      </div>
+      [% FOREACH hud IN huds.values %]
+         [% INCLUDE hud.tt %]
+      [% END %]
+   </div>
+[% INCLUDE footer.tt %]

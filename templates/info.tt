@@ -1,0 +1,19 @@
+[% INCLUDE header.tt %]
+	<div id="menu">
+		<ul>
+           <li><a href="[% url %]/" title="Browse custom HUDs for Quake Live">Browse</a></li>
+           <li><a href="[% url %]/random" title="Random custom HUDs">Random</a></li>
+           <li><a href="[% url %]/authors" title="Browse custom HUDs by author">Authors</a></li>
+           <li><a href="[% url %]/search" title="Search a custom HUD">Search</a></li>
+           <li><a href="[% url %]/upload" title="Upload a custom HUD">Upload</a></li>
+           <li><a href="[% url %]/about" title="About custom HUDs for Quake Live">About</a></li>
+		</ul>
+		<p>Never gonna give up.</p>
+	</div>
+	<div id="page">
+		<h1>Custom HUDs for Quake Live</h1>
+		<h2>[% heading %]</h2>
+		<p>[% text %]</p>
+		<p><a href="javascript:history.go(-1);">Go back</a></p>
+	</div>
+[% INCLUDE footer.tt %]

@@ -1,0 +1,69 @@
+#!/usr/bin/perl
+
+use utf8;
+use strict;
+use warnings;
+
+use DBI;
+
+my $uniqid = $ARGV[0];
+
+my $path           = '/srv/www/qlhud.net/htdocs/files';
+my $screenshotpath = $path . '/screenshots';
+my $hudpath        = $path . '/huds';
+
+my %sql = (
+   host      => '',
+   db        => '',
+   table     => 'huds',
+   user      => '',
+   pass      => '',
+);
+
+unless ($uniqid || $uniqid =~ /^[A-Za-z0-9]$/) {
+   print("Usage: $0 <uniqid>\n");
+   exit 1;
+}
+
+my $dbh = DBI->connect("DBI:mysql:$sql{db}:$sql{host}", $sql{user}, $sql{pass},
+          {RaiseError => 1, mysql_auto_reconnect => 1, mysql_enable_utf8 => 1});
+
+my $result = $dbh->selectrow_arrayref("SELECT author,uniqid FROM $sql{table} WHERE uniqid = ?", {}, $uniqid);
+
+unless ($result) {
+   print("HUD with uniqid '$uniqid' not found\n");
+   exit 1;
+}
+
+my $screenshot = $screenshotpath . '/' . @$result[0] . '_' . @$result[1] . '.jpg';
+my $hud        = $hudpath        . '/' . @$result[0] . '_' . @$result[1] . '.zip';
+
+if (! -e $screenshot) {
+   print("Screenshot not found: $screenshot\n");
+   exit 1;
+}
+elsif (! -e $hud) {
+   print("HUD not found: $hud\n");
+   exit 1;
+}
+else {
+   print("Remove HUD '$uniqid'? [y/n]: ");
+
+   my $yn = <STDIN>;
+   chomp $yn;
+
+   unless ($yn eq 'y') {
+      print("Nothing removed\n");
+      exit;
+   }
+   else {
+      my $result = $dbh->do("DELETE FROM $sql{table} WHERE uniqid = ?", {}, $uniqid);
+      print("deleted: $result rows\n");
+
+      unlink $screenshot || warn($!);
+      print("removed: $screenshot\n");
+
+      unlink $hud || warn($!);
+      print("removed: $hud\n");
+   }
+}

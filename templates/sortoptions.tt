@@ -1,0 +1,23 @@
+<form name="sortoptions" action="[% url %]/" method="POST" onsubmit="return validateSortoptions();">
+   <p>
+      Show
+      <input class="center" type="text" size="2" name="num" value="[% num %]">
+      <strong>custom HUD</strong>s per page and sort them by <!-- [% sort %] -->
+         <select name="sort">
+            [% IF sort == 'downloads' %]
+            <option value="date">date</option>
+            <option selected="selected" value="downloads">downloads</option>
+            <option value="clicks">clicks</option>
+            [% ELSIF sort == 'clicks' %]
+            <option value="date">date</option>
+            <option value="downloads">downloads</option>
+            <option selected="selected" value="clicks">clicks</option>
+            [% ELSE %]
+            <option selected="selected" value="id">date</option>
+            <option value="downloads">downloads</option>
+            <option value="clicks">clicks</option>
+            [% END %]
+         </select>
+      <input type="submit" value="Submit">
+   </p>
+</form>

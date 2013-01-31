@@ -1,0 +1,45 @@
+[% INCLUDE header.tt %]
+   <div id="menu">
+      <ul>
+         <li><strong title="Browse custom HUDs for Quake Live">Browse</strong></li>
+         <li><a href="[% url %]/random" title="Random custom HUDs">Random</a></li>
+         <li><a href="[% url %]/authors" title="Browse custom HUDs by author">Authors</a></li>
+         <li><a href="[% url %]/search" title="Search a custom HUD">Search</a></li>
+         <li><a href="[% url %]/upload" title="Upload a custom HUD">Upload</a></li>
+         <li><a href="[% url %]/about" title="About custom HUDs for Quake Live">About</a></li>
+      </ul>
+      <p>Click on the image to display the unique page of the <strong>custom HUD</strong>, useful for hotlinking or showing it to friends</p>
+      <p>Don't know how to use a <strong>custom HUD</strong>? Check out holysh1ts <a href="http://www.holysh1t.net/quakelive-custom-hud-install-guide/" title="holysh1t.net: Custom HUD install guide">custom HUD install guide</a></p>
+      <p>[% totalhuds %] <strong>HUD</strong>s have been added so far - share yours too!</p>
+      <p><g:plusone size="small" count="false"></g:plusone>
+      <br /><div id="fb-root"></div><div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-colorscheme="light" data-action="like"></div></p>
+      [% INCLUDE index_js.tt %]
+   </div>
+   <div id="page">
+      <h1>Custom HUDs for Quake Live</h1>
+		<div class="smallmenu">
+         [% INCLUDE sortoptions.tt %]
+         [% INCLUDE pageselector.tt %]
+         [% INCLUDE pagenp.tt %]
+      </div>
+      [%
+         IF sort == 'clicks';
+            FOREACH hud IN huds.values.sort(sort, 'downloads').reverse;
+               INCLUDE hud.tt;
+            END;
+         ELSIF sort == 'downloads';
+            FOREACH hud IN huds.values.sort(sort, 'clicks').reverse;
+               INCLUDE hud.tt;
+            END;
+         ELSE;
+            FOREACH hud IN huds.values.nsort(sort).reverse;
+               INCLUDE hud.tt;
+            END;
+         END;
+      %]
+      <div class="smallmenu">
+         [% INCLUDE pagenp.tt %]
+         [% INCLUDE pageselector.tt %]
+      </div>
+   </div>
+[% INCLUDE footer.tt %]

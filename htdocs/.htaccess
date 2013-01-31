@@ -1,0 +1,21 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L] 
+
+Redirect permanent /authorcloud /authors
+Redirect permanent /download /hud/download
+Redirect permanent /id /hud
+Redirect permanent /user /author
+
+RewriteRule ^([0-9]+)/?$ index.cgi?page=$1 [L]
+RewriteRule ^about/?$ index.cgi?dest=about [L]
+RewriteRule ^author/(.+?)/?$ index.cgi?dest=search&author=$1&exact=yes [L]
+RewriteRule ^authors/?$ index.cgi?dest=authors [L]
+RewriteRule ^hud/(\w+)/?$ index.cgi?dest=uniqid&uniqid=$1 [L]
+RewriteRule ^hud/download/(\w+)/?$ index.cgi?dest=download&uniqid=$1 [L]
+RewriteRule ^index/?$ index.cgi [L]
+RewriteRule ^random/?$ index.cgi?dest=random [L]
+RewriteRule ^rss/?$ index.cgi?dest=rss [L]
+RewriteRule ^search/?$ index.cgi?dest=search [QSA,L]
+RewriteRule ^upload/?$ index.cgi?dest=upload [QSA,L]

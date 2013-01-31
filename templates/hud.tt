@@ -1,0 +1,26 @@
+<div class="hud">
+  <a href="[% url %]/hud/[% hud.uniqid %]">
+    <img src="[% url %]/files/screenshots/[% hud.author %]_[% hud.uniqid %].jpg" width="640" height="[% hud.imgy %]" alt="HUD ID [% hud.uniqid %] by [% hud.author %]">
+  </a>
+  <ul>
+    <li>
+      <span class="bold">Author:</span>
+      <a class="nodec" href="[% url %]/author/[% hud.author %]" title="Browse all HUDs by [% hud.author %]">[% hud.author %]</a>
+    </li>
+    <li>
+      <span class="bold">Date added:</span> <span title="Timezone: CE(S)T (Europe/Berlin)">[% hud.timestamp %]</span>
+    </li>
+    <li>
+      <span class="bold">Description:</span> [% hud.description %]
+    </li>
+    <li>
+      <span class="bold">Clicks:</span> [% hud.clicks %]
+    </li>
+    <li>
+      <span class="bold">Downloads:</span> [% hud.downloads %]
+    </li>
+    <li>
+      <a href="[% url %]/hud/download/[% hud.uniqid %]" title="Download this custom HUD">Download</a>
+    </li>
+  </ul>
+</div>

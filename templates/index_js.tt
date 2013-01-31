@@ -1,0 +1,35 @@
+<script type="text/javascript">
+(function() {
+   var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+   po.src = 'https://apis.google.com/js/plusone.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+function IsNumeric(input) {
+   return (input - 0) == input && input.length > 0;
+}
+function validateSortoptions() {
+    var x=document.forms['sortoptions']['num'].value
+    if (x==0 || x=='' || x==null) {
+       alert("You need to specify how many HUDs you want to see per page!");
+       return false;
+    }
+    else if (x>[% maxhudsperpage %]) {
+       alert('Maximum [% maxhudsperpage %] HUDs per page allowed!');
+       return false;
+    }
+}
+function validateGoto() {
+    var x=document.forms['goto']['page'].value;
+    if (x==0 || x=='' || x==null || x>[% pagecount %] || !IsNumeric(x)) {
+       alert("Page must be any of 1 to [% pagecount %]!");
+       return false;
+    }
+}
+</script>

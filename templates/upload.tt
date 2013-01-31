@@ -1,0 +1,44 @@
+[% INCLUDE header.tt %]
+	<div id="menu">
+		<ul>
+           <li><a href="[% url %]/" title="Browse custom HUDs for Quake Live">Browse</a></li>
+           <li><a href="[% url %]/random" title="Random custom HUDs">Random</a></li>
+           <li><a href="[% url %]/authors" title="Browse custom HUDs by author">Authors</a></li>
+           <li><a href="[% url %]/search" title="Search a custom HUD">Search</a></li>
+           <li><strong title="Upload a custom HUD">Upload</strong></li>
+           <li><a href="[% url %]/about" title="About custom HUDs for Quake Live">About</a></li>
+		</ul>
+		<p>Here you can <strong>upload</strong> a <strong>custom Quake Live HUD</strong> to the site</p>
+		<p></p>
+	</div>
+	<div id="page">
+		<h1>Upload a custom HUD for Quake Live</h1>
+		[% IF reason %]
+		<h2>Error</h2>
+		<p class="error">[% reason %]</p>
+      [% END %]
+      <form method="POST" action="[% url %]/upload" enctype="multipart/form-data">
+			<div class="line">
+				<span class="label">Nickname of the HUDs author (please always use the same!):</span>
+				<span class="field"><input type="text" name="author" size=20 value="[% author %]" placeholder="Nickname..."></span>
+			</div>
+			<div class="line">
+				<span class="label">Description (NO HTML):</span>
+				<span class="field"><textarea name="description" rows="4" cols="78" placeholder="Describe the HUD...">[% description %]</textarea></span>
+			</div>
+			<div class="line">
+				<span class="label">Hudfile (.zip only, may include a .vhud file):</span>
+				<span class="field"><input type="file" name="hud" accept="application/zip"></span>
+			</div>
+			<div class="line">
+				<span class="label">Screenshot (.jpg or .png):</span>
+				<span class="field"><input type="file" name="screenshot" accept="image/*"></span>
+			</div>
+			<div class="button">
+				<input type="hidden" name="dest" value="upload">
+				<input type="submit" value="Upload">
+			</div>
+		</form>
+      <p>If you have problems uploading a <strong>custom HUD</strong> please <a href="[% url %]/about#contact" title="About Custom HUDs for Quake Live">contact us</a></p>
+	</div>
+[% INCLUDE footer.tt %]

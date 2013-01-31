@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="[% url %]/rss" rel="self" type="application/rss+xml" />
+    <title>[% title %]</title>
+    <link>[% url %]/</link>
+    <description>The [% defhudsrss %] most recently uploaded custom HUDs for Quake Live</description>
+    <language>en</language>
+    [% FOREACH hud IN huds.values.nsort('id').reverse %]
+    <item>
+      <title>HUD: ID [% hud.uniqid %] by [% hud.author %]</title>
+      <link>[% url %]/hud/[% hud.uniqid %]</link>
+      <guid>[% url %]/hud/[% hud.uniqid %]</guid>
+      <description>
+         <![CDATA[<a href="[% url %]/hud/[% hud.uniqid %]"><img src=[% url %]/files/screenshots/[% hud.author %]_[% hud.uniqid %].jpg width="640" height="[% hud.imgy %]" alt="HUD ID [% hud.uniqid %] by [% hud.author %]"></a>
+         <ul>
+            <li><strong>Author: <a href="[% url %]/author/[% hud.author %]" title="Browse all HUDs by [% hud.author %]">[% hud.author %]</a></strong></li>
+            <li><strong>Date added:</strong> [% hud.date %]</li>
+            <li><strong>Description:</strong> [% hud.desc %]</li>
+            <li><strong>Clicks:</strong> [% hud.clicks %]</li>
+            <li><strong>Downloads:</strong> [% hud.downloads %]</li>
+            <li><strong><a href="[% url %]/hud/download/[% hud.uniqid %]" title="Download this HUD">Download</a></strong></li>
+         </ul>]]>
+      </description>
+    </item>
+    [% END %]
+  </channel>
+</rss>
+<!-- page generation took [% measure() %] seconds -->

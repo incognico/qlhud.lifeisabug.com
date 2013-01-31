@@ -1,0 +1,21 @@
+[% INCLUDE header.tt %]
+	<div id="menu">
+		<ul>
+           <li><a href="[% url %]/" title="Browse custom HUDs for Quake Live">Browse</a></li>
+           <li><a href="[% url %]/random" title="Random custom HUDs">Random</a></li>
+           <li><a href="[% url %]/authors" title="Browse custom HUDs by author">Authors</a></li>
+           <li><a href="[% url %]/search" title="Search a custom HUD">Search</a></li>
+           <li><a href="[% url %]/upload" title="Upload a custom HUD">Upload</a></li>
+           <li><a href="[% url %]/about" title="About custom HUDs for Quake Live">About</a></li>
+		</ul>
+		[% FOREACH hud IN huds.values %]
+		<p><strong>Custom HUD:</strong> ID <span class="mono">[% hud.uniqid %]</span> by <span class="mono">[% hud.author %]</span>. Want to show this <strong>HUD</strong> to anyone? Use the link at the bottom of this page or the one in your browsers URL bar</p>
+		<p>Click <a href="http://www.holysh1t.net/quakelive-custom-hud-install-guide/" title="holysh1t.net: Custom HUD install guide">here</a> for instructions on installing a <strong>custom HUD</strong></p>
+	</div>
+	<div id="page">
+		<h1>HUD: ID [% hud.uniqid %] by [% hud.author %]</h1>
+			[% INCLUDE hud.tt %]
+      <p>Permalink: <a href="[% url %]/hud/[% hud.uniqid %]" title="HUD: ID [% hud.uniqid %] by [% hud.author %]">[% url %]/hud/[% hud.uniqid %]</a></p>
+		[% END %]
+	</div>
+[% INCLUDE footer.tt %]

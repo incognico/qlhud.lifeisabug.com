@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://qlhud.core.ws/</loc>
+  </url>
+  <url>
+    <loc>http://qlhud.core.ws/upload/</loc>
+  </url>
+  <url>
+    <loc>http://qlhud.core.ws/search/</loc>
+  </url>
+  <url>
+    <loc>http://qlhud.core.ws/authors/</loc>
+  </url>
+  <url>
+    <loc>http://qlhud.core.ws/random/</loc>
+  </url>
+  <url>
+    <loc>http://qlhud.core.ws/about/</loc>
+  </url>
+
+  [% FOREACH hud IN huds %]
+  <url>
+    <loc>http://qlhud.core.ws/id/[% hud.uniqid %]/</loc>
+  </url>
+  [% END %]
+
+  [% FOREACH page IN pages %]
+  <url>
+    <loc>http://qlhud.core.ws/[% page %]/</loc>
+  </url>
+  [% END %]
+
+  [% FOREACH author IN authors %]
+  <url>
+    <loc>http://qlhud.core.ws/author/[% author %]/</loc>
+  </url>
+  [% END %]
+</urlset>

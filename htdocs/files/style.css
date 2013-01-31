@@ -1,0 +1,204 @@
+/* qlhud.core.ws CSS Stylesheet
+ * by chris (core.im)
+ * & nico (lifeisabug.com)
+ * */
+
+@font-face {
+   font-family: 'DpQuakeRegular';
+   src: url('./fonts/dpquake_.eot');
+   src: local('DpQuake'), local('DpQuake'),
+   url('./fonts/dpquake_.woff') format('woff'),
+   url('./fonts/dpquake_.ttf') format('truetype'),
+   url('./fonts/dpquake_.svg#DpQuake') format('svg');
+}
+
+html {
+   background-color: #0f0f0f;
+}
+
+body {
+   background-color: #0f0f0f;
+   color: #f0f0f0;
+   /* font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, sans-serif; */
+   font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 1.6em;
+   margin: 0;
+   padding: 0;
+}
+
+div#menu {
+   text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+   border-left: 3px solid #ff0000;
+   border-right: 1px solid #222;
+   bottom: 0;
+   margin: 0;
+   padding: 3em 10px 10px;
+   position: fixed;
+   top: 0;
+   width: 200px;
+}
+
+div#menu ul {
+   background-color: #222;
+   margin: 0 -10px;
+   padding: 0;
+}
+
+div#menu ul li {
+   background-color: #0f0f0f;
+   list-style-type: none;
+   margin: 0 0 1px;
+   padding: 5px 10px;
+   text-align: right;
+   text-shadow: 0.05em 0.05em #333;
+}
+
+div#menu ul li:hover {
+   background-color: #ff0000;
+   color: #f0f0f0;
+}
+
+div#menu ul li:hover a {
+   color: #f0f0f0;
+}
+
+div#menu ul li:after {
+   color: #666;
+   /* content: " ℚ "; */
+   font-family: 'DpQuakeRegular';
+   content: " Q ";
+}
+
+div#menu ul li:hover:after {
+   color: #f0f0f0;
+}
+
+div#menu ul li a {
+   font-weight: bold;
+   text-decoration: none;
+}
+
+div#menu ul li strong {
+   color: #aaa;
+}
+
+div#page {
+   background-color: #0f0f0f;
+   text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+   margin: 3em 0 0 232px;
+   padding: 10px 15px;
+   position: relative;
+   width: 648px;
+}
+
+div#page h1 {
+   padding: 0 0 1em;
+   font-weight: 700;
+   font-size: 28px;
+   text-shadow: 0.1em 0.1em #555;
+   text-align: center;
+}
+
+div#page h2 {
+   font-size: 18px;
+   text-shadow: 0.1em 0.1em #444;
+}
+
+div#page span.hide {
+   display: none;
+}
+
+div.hud {
+   margin-bottom: 3em;
+}
+
+div.hud a {
+   font-weight: bold;
+}
+
+div.hud a img {
+   background-color: #333;
+   border: 1px solid #666;
+   padding: 3px;
+}
+
+div.hud ul {
+   margin: 0;
+   padding: 0;
+}
+
+div.hud li {
+   list-style-type: none;
+}
+
+div.line span.field, div.line span.label {
+   background-color: #0f0f0f;
+   display: block;
+   padding: 5px 10px;
+   width: 648px;
+}
+
+div.line input[type=text], div.line input[type=file], div.line textarea {
+   color: #ddd;
+   font-family: inherit;
+   font-size: inherit;
+   background-color: #0f0f0f;
+   border: 1px solid #333;
+   padding: 3px;
+   width: 642px;
+   overflow: auto;
+}
+
+div.smallmenu {
+   text-align: center;
+}
+
+div.smallmenu input[type=text], div.smallmenu input[type=submit], div.smallmenu select {
+   color: #f0f0f0;
+   font-family: inherit;
+   font-size: inherit;
+   background-color: #0f0f0f;
+   border: 1px solid #333;
+}
+
+div.button {
+   padding: 20px 10px;
+}
+
+h1, h2 {
+   /* font-family: "DpQuakeRegular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans Condensed", "Bitstream Vera Sans", "Trebuchet MS", Verdana, sans-serif;
+   text-transform: uppercase; */
+   margin: 0;
+   padding: 0;
+}
+
+a, .error {
+   color: #dd0000;
+}
+
+.bold {
+   font-weight: bold;
+}
+
+.center {
+   text-align: center;
+}
+
+.mono {
+   font-family: "Droid Sans Mono", "Lucida Console", Consolas, "DejaVu Sans Mono", "Bitstream VeraSans Mono", monospace;
+}
+
+.nodec {
+   text-decoration: none;
+}
+
+.spacer {
+   margin: 0 5px;
+}
+
+.spacer:before {
+   font-family: 'DpQuakeRegular';
+   content: "Q";
+}

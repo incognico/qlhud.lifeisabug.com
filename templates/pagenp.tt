@@ -1,0 +1,17 @@
+<p>
+   [% IF pages.size > 1 %]
+   &laquo;
+      [% IF page == 1 %]
+         Previous page
+      [% ELSE %]
+         <a href="[% url %]/[% page - 1 %]" title="Go to page [% page + 1 %]">Previous page</a>
+      [% END %]
+      <span class="spacer"></span>
+      [% IF pagecount > page %]
+         <a href="[% url %]/[% page + 1 %]" title="Go to page [% page + 1 %]">Next page</a>
+      [% ELSE %]
+         Next page
+      [% END %]
+   &raquo;
+   [% END %]
+</p>
