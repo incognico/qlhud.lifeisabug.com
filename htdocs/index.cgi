@@ -36,8 +36,8 @@ my %vars = (
    maxhudspersearch => 250,
    titleappend      => ' - QLHUD: Custom HUDs for Quake Live - Your QL custom HUD resource',
    url              => 'http://qlhud.net',
-   huddir           => '/srv/www/qlhud.net/htdocs/new/files/huds',
-   screenshotdir    => '/srv/www/qlhud.net/htdocs/new/files/screenshots',
+   huddir           => '/srv/www/qlhud.net/htdocs/files/huds',
+   screenshotdir    => '/srv/www/qlhud.net/htdocs/files/screenshots',
    tempdir          => '/tmp/qlhud_temp',
 );
 
