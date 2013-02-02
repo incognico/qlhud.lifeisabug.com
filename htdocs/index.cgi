@@ -235,7 +235,7 @@ sub print_page {
       for (keys($$ttvars{huds})) {
          if ($$ttvars{huds}{$_}{description}) {
             $$ttvars{huds}{$_}{description} = encode_entities($$ttvars{huds}{$_}{description});
-            $$ttvars{huds}{$_}{description} =~ s!\b((?:[hH][tT][tT][pP]://|[wW][wW][wW]\.)[^\s)]+)!<a style="font-weight:normal;" href="$1">$1</a>!g;
+            $$ttvars{huds}{$_}{description} =~ s!\b((?:[hH][tT][tT][pP]://|[wW][wW][wW]\.)[^\s)'"]+)!<a style="font-weight:normal;" href="$1">$1</a>!g;
            #$$ttvars{huds}{$_}{description} =~ s!(?:(?:\r)?\n)+!<br />!g;
             $$ttvars{huds}{$_}{description} =~ s!(?:(?:\r)?\n)+! !g;
          }
