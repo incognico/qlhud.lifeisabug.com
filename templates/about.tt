@@ -30,7 +30,7 @@
       By hand: Check out <a href="http://quakelivehud.blogspot.com/" title="Quake Live HUD tutorial">Borgondios Quake Live HUD tutorial</a></p>
       <p>But don't forget to share your creation at this place when you are done! :-)</p>
       <h2>Why where the counters reset?</h2>
-      <p><a href=".">QLHUD.net</a> (formerly qlhud.core.ws) has been around since April 2009 and disappeared in October 2012 (it was required to remove the sites backend code, don't even ask). In January 2013 the backend was rewritten from scratch (this time open source, <a href="https://github.com/nwohlgem/qlhud.net" title="qlhud.net repository at github.com">available at github</a>) and the click and download counters were reset in the curse of the relaunch (there were at least 185000 downloads from Apr. 2009 to Oct. 2012).</p>
+      <p><a href=".">QLHUD.net</a> (formerly qlhud.core.ws) has been around since April 2009 and disappeared in October 2012 (it was required to remove the sites backend code, don't even ask). In January 2013 the backend was rewritten from scratch (this time open source, <a href="https://github.com/incognico/qlhud.net" title="qlhud.net repository at github.com">available at github</a>) and the click and download counters were reset in the curse of the relaunch (there were at least 185000 downloads from Apr. 2009 to Oct. 2012).</p>
       <h2>In the press</h2>
          <ul>
             <li>holysh1t.net: <a href="http://www.holysh1t.net/hosting-and-sharing-custom-quake-live-huds/" title="Platform for hosting and sharing custom Quake Live HUDs">Platform for hosting and sharing custom Quake Live HUDs</a></li>
