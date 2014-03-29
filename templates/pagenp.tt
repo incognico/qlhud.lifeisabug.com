@@ -4,7 +4,7 @@
       [% IF page == 1 %]
          Previous page
       [% ELSE %]
-         <a href="[% url %]/[% page - 1 %]" title="Go to page [% page + 1 %]">Previous page</a>
+         <a href="[% url %]/[% page - 1 %]" title="Go to page [% page - 1 %]">Previous page</a>
       [% END %]
       <span class="spacer"></span>
       [% IF pagecount > page %]
