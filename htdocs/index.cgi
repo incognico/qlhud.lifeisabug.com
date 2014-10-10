@@ -286,7 +286,7 @@ sub page_about {
 
 sub page_authors {
    my %authors;
-   $authors{$_}++ for (@{$dbh->selectcol_arrayref("SELECT author FROM $sql{table}")});
+   $authors{@$_[0]} = @$_[1] for (@{$dbh->selectall_arrayref("SELECT author, COUNT(*) FROM $sql{table} GROUP BY author")});
 
    my $cloud = HTML::TagCloud->new(levels => 42);
    $cloud->add($_, $vars{url} . '/author/' . $_, $authors{$_}) for (keys(%authors));
