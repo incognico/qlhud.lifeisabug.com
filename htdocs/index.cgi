@@ -454,7 +454,7 @@ sub page_search {
 sub page_uniqid {
    my $myvars;
 
-   my $result = $dbh->selectall_hashref("SELECT $sql{defhud} FROM $sql{table} WHERE uniqid = ?", 'uniqid', {}, $quniqid);
+   my $result = $dbh->selectall_hashref("SELECT $sql{defhud} FROM $sql{table} WHERE BINARY uniqid = ?", 'uniqid', {}, $quniqid);
    $$myvars{huds}{$quniqid} = $$result{$quniqid};
 
    if (%$result) {
