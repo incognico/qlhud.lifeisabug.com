@@ -301,7 +301,7 @@ sub page_authors {
 
 sub page_download {
    if ($quniqid) {
-      my $result = $dbh->selectrow_arrayref("SELECT author FROM $sql{table} WHERE uniqid = ?", {}, $quniqid);
+      my $result = $dbh->selectrow_arrayref("SELECT author FROM $sql{table} WHERE BINARY uniqid = ?", {}, $quniqid);
 
       if (@$result) {
          redir($vars{url} . '/files/huds/' . @$result[0] . '_' . $quniqid . '.zip', 0, 302);
