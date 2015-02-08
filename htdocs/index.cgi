@@ -63,12 +63,13 @@ my %irc = (
 );
 
 my $tt = Template->new(\%ttopts);
-die("template folder $ttopts{INCLUDE_PATH} does not exist") unless (-e $ttopts{INCLUDE_PATH});
+croak("template folder $ttopts{INCLUDE_PATH} does not exist") unless (-e $ttopts{INCLUDE_PATH});
 
 my $dbh;
 
 my $ip   = $ENV{REMOTE_ADDR};
-my $post = 1 if (request_method eq 'POST');
+my $post = 0;
+$post = 1 if (request_method eq 'POST');
 
 my $qauthor      = param('author');
 my $qdescription = param('description');
@@ -115,7 +116,8 @@ my $cookie = CGI::Cookie->new(
 
 mysql_connect() unless ($qdest eq 'about' || (!$post && $qdest eq 'upload'));
 
-my $totalhuds = counthuds() if ($dbh);
+my $totalhuds = 0;
+$totalhuds = counthuds() if ($dbh);
 
 given ($qdest) {
    when('about')    { page_about(); }
@@ -142,7 +144,7 @@ sub counthuds {
 sub irc {
    my $msg = shift;
 
-   open my $ircgate, ">>", $irc{gate};
+   open my $ircgate, ">>", $irc{gate} || return;
    print $ircgate $irc{chan} . ' ' . $msg . "\n";
    close $ircgate;
 }
@@ -221,7 +223,7 @@ sub print_page {
    $setcookie = 0   unless ($setcookie);
    $status    = 200 unless ($status);
    
-   die("print_page($name): template $name.tt does not exist!") unless (-e "$ttopts{INCLUDE_PATH}$name.tt");
+   croak("print_page($name): template $name.tt does not exist!") unless (-e "$ttopts{INCLUDE_PATH}$name.tt");
 
    my $ttvars = {
       measure   => \&measure,
@@ -257,7 +259,7 @@ sub print_page {
    else {
       print_header(0, $status);
    }
-   $tt->process("$name.tt", $ttvars) || die($tt->error);
+   $tt->process("$name.tt", $ttvars) || croak($tt->error);
 }
 
 sub redir {
@@ -306,9 +308,9 @@ sub page_download {
       if (@$result) {
          redir($vars{url} . '/files/huds/' . @$result[0] . '_' . $quniqid . '.zip', 0, 302);
 
-         my $result = $dbh->selectrow_arrayref("SELECT ip from $sql{sesstable} WHERE ip = ? AND uniqid = ? AND type = 'downloads'", {}, ($ip, $quniqid));
+         my $result2 = $dbh->selectrow_arrayref("SELECT ip from $sql{sesstable} WHERE ip = ? AND uniqid = ? AND type = 'downloads'", {}, ($ip, $quniqid));
 
-         unless ($result) {
+         unless ($result2) {
             $dbh->do("UPDATE $sql{table} SET downloads=downloads+1 WHERE uniqid = ?", {}, $quniqid);
             $dbh->do("INSERT INTO $sql{sesstable} (ip, uniqid, type) VALUES (?, ?, 'downloads')", {}, $ip, $quniqid);
          }
@@ -460,9 +462,9 @@ sub page_uniqid {
    if (%$result) {
       print_page('uniqid', "HUD ID $quniqid by $$myvars{huds}{$quniqid}{author}", $myvars);
 
-      my $result = $dbh->selectrow_arrayref("SELECT ip from $sql{sesstable} WHERE ip = ? AND uniqid = ? AND type = 'clicks'", {}, ($ip, $quniqid));
+      my $result2 = $dbh->selectrow_arrayref("SELECT ip from $sql{sesstable} WHERE ip = ? AND uniqid = ? AND type = 'clicks'", {}, ($ip, $quniqid));
 
-      unless ($result) {
+      unless ($result2) {
          $dbh->do("UPDATE $sql{table} SET clicks=clicks+1 WHERE uniqid = ?", {}, $quniqid);
          $dbh->do("INSERT INTO $sql{sesstable} (ip, uniqid, type) VALUES (?, ?, 'clicks')", {}, $ip, $quniqid);
       }
@@ -518,7 +520,7 @@ sub page_upload_post {
       my $screenshottemp = $vars{tempdir}       . '/' . $filename . '.jpg';
 
       if (-e ($hud || $screenshot)) {
-         $$myvars{reason} = 'HUD or screenshot already exist on the server!',
+         $$myvars{reason} = 'HUD or screenshot already exist on the server!';
          page_upload($myvars);
          return;
       }
@@ -581,7 +583,7 @@ sub page_upload_post {
 
       my $rimg;
       unless ($rimg = Imager->new(file => $screenshottemp)) {
-            $$myvars{reason} = 'Could not open temporary screenshot for reading';
+            $$myvars{reason} = 'Could not open temporary screenshot for reading!';
             page_upload($myvars);
             unlink $hud;
             unlink $screenshottemp;
