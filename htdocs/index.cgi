@@ -2,13 +2,13 @@
 
 # qlhud.net
 #
-# Copyright 2013, Nico R. Wohlgemuth
+# Copyright 2013-2016, Nico R. Wohlgemuth
 
 use utf8;
 use strict;
 use warnings;
 
-use feature 'switch';
+use 5.16.0;
 
 use Time::HiRes qw(gettimeofday tv_interval);
 my $begintime;
