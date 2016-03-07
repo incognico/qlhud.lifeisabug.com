@@ -235,7 +235,7 @@ sub print_page {
    $$ttvars{$_} = $$addvars{$_} for (keys(%$addvars));
 
    if (exists $$ttvars{huds}) {
-      for (keys($$ttvars{huds})) {
+      for (keys(%{$$ttvars{huds}})) {
          if ($$ttvars{huds}{$_}{description}) {
             $$ttvars{huds}{$_}{description} = encode_entities($$ttvars{huds}{$_}{description});
             $$ttvars{huds}{$_}{description} =~ s!\b((?:[hH][tT][tT][pP][sS]?://|[wW][wW][wW]\.)[^\s)'"]+)!<a style="font-weight:normal;" href="$1">$1</a>!g;
@@ -360,7 +360,7 @@ sub page_index {
       return;
    }
 
-   $$myvars{hudcount}  = scalar keys($$myvars{huds});
+   $$myvars{hudcount}  = scalar keys(%{$$myvars{huds}});
    $$myvars{pagecount} = ceil($totalhuds/$qnum);
 
    my $pageplusminus = 3;
