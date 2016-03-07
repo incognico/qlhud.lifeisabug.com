@@ -2,13 +2,14 @@
 
 # qlhud.net
 #
-# Copyright 2013-2016, Nico R. Wohlgemuth
+# Copyright 2013-2016, Nico R. Wohlgemuth <nico@lifeisabug.com>
 
 use utf8;
 use strict;
 use warnings;
 
 use 5.16.0;
+no warnings 'experimental::smartmatch';
 
 use Time::HiRes qw(gettimeofday tv_interval);
 my $begintime;
@@ -629,6 +630,8 @@ sub page_upload_post {
       }
 
       redir($vars{url} . '/hud/' . $uniqid, 0, 303);
+
+      close STDOUT;
 
       unlink $screenshottemp;
 
