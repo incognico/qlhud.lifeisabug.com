@@ -306,7 +306,7 @@ sub page_download {
    if ($quniqid) {
       my $result = $dbh->selectrow_arrayref("SELECT author FROM $sql{table} WHERE BINARY uniqid = ?", {}, $quniqid);
 
-      if (@$result) {
+      if ($result) {
          redir($vars{url} . '/files/huds/' . @$result[0] . '_' . $quniqid . '.zip', 0, 302);
 
          my $result2 = $dbh->selectrow_arrayref("SELECT ip from $sql{sesstable} WHERE ip = ? AND uniqid = ? AND type = 'downloads'", {}, ($ip, $quniqid));
