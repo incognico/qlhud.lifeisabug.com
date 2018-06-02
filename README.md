@@ -1,4 +1,4 @@
-qlhud.net
+qlhud.lifeisabug.com
 =========
 
-http://qlhud.net website
+http://qlhud.lifeisabug.com website
