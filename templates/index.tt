@@ -11,8 +11,6 @@
       <p>Click on the image to display the unique page of the <strong>custom HUD</strong>, useful for hotlinking or showing it to friends</p>
       <p>Don't know how to use a <strong>custom HUD</strong>? Check out holysh1ts <a href="http://www.holysh1t.net/quakelive-custom-hud-install-guide/" title="holysh1t.net: Custom HUD install guide">custom HUD install guide</a></p>
       <p>[% totalhuds %] <strong>HUD</strong>s have been added so far - share yours too!</p>
-      <p><g:plusone size="small" count="false"></g:plusone>
-      <br /><div id="fb-root"></div><div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-colorscheme="light" data-action="like"></div></p>
       [% INCLUDE index_js.tt %]
    </div>
    <div id="page">
