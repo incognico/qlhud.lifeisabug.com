@@ -2,7 +2,7 @@
 
 # qlhud.net
 #
-# Copyright 2013-2016, Nico R. Wohlgemuth <nico@lifeisabug.com>
+# Copyright 2013-2018, Nico R. Wohlgemuth <nico@lifeisabug.com>
 
 use utf8;
 use strict;
@@ -27,23 +27,23 @@ use DBI;
 use File::Type;
 use Imager;
 
-$CGI::POST_MAX = 1024 * 1024 * 3;
+$CGI::POST_MAX = 1024 * 1024 * 5;
 
 my %vars = (
    defhudsperpage   => 6,
    defhudsrss       => 10,
-   domain           => 'qlhud.net',
+   domain           => 'qlhud.lifeisabug.com',
    maxhudsperpage   => 50,
    maxhudspersearch => 250,
    titleappend      => ' - QLHUD: Custom HUDs for Quake Live - Your QL custom HUD resource',
-   url              => 'http://qlhud.net',
-   huddir           => '/srv/www/qlhud.net/htdocs/files/huds',
-   screenshotdir    => '/srv/www/qlhud.net/htdocs/files/screenshots',
+   url              => 'https://qlhud.lifeisabug.com',
+   huddir           => '/srv/www/qlhud.lifeisabug.com/htdocs/files/huds',
+   screenshotdir    => '/srv/www/qlhud.lifeisabug.com/htdocs/files/screenshots',
    tempdir          => '/tmp/qlhud_temp',
 );
 
 my %ttopts = (
-   INCLUDE_PATH => '/srv/www/qlhud.net/templates/',
+   INCLUDE_PATH => '/srv/www/qlhud.lifeisabug.com/templates/',
    PRE_CHOMP    => 2,
    POST_CHOMP   => 2,
 );

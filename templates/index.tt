@@ -12,6 +12,8 @@
       <p>Don't know how to use a <strong>custom HUD</strong>? Check out holysh1ts <a href="http://www.holysh1t.net/quakelive-custom-hud-install-guide/" title="holysh1t.net: Custom HUD install guide">custom HUD install guide</a></p>
       <p>[% totalhuds %] <strong>HUD</strong>s have been added so far - share yours too!</p>
       [% INCLUDE index_js.tt %]
+      <br>
+      <p><a href="https://xonotic.lifeisabug.com/" title="Online Server List for Xonotic">Xonotic Server List</a> &#x1F5D7;</p>
    </div>
    <div id="page">
       <h1>Custom HUDs for Quake Live</h1>

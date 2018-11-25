@@ -13,8 +13,8 @@
    <div id="page">
       <h1>About Custom HUDs for Quake Live</h1>
       <h2>Info</h2>
-      <p>Custom HUDs for Quake Live alias QLHUD is a platform where anyone can download and share custom HUDs for <a href="http://www.quakelive.com/" title="Quake Live">Quake Live.</a></p>
-      <p>This service is, and will stay completely free for everyone. Please report any bugs if you should encounter one. Feature suggestions are always welcome too, if you have a good idea or miss something on the page, feel free to tell us! See the contact possibilities below.</p>
+      <p>Custom HUDs for Quake Live alias QLHUD is a platform where anyone can download and share custom HUDs for <a href="https://www.quakelive.com/" title="Quake Live">Quake Live.</a></p>
+		<p>This service is, and will stay completely free for everyone. Please report any bugs if you should encounter one. Feature suggestions are always welcome too, if you have a good idea or miss something on the page, feel free to tell us! See the contact possibilities below.</p>
       <h2>RSS Feed</h2>
       <p>An RSS Feed which shows the most recently uploaded custom HUDs is available at <a href="[% url %]/rss" title="RSS Feed">[% url %]/rss</a></p>
       <!-- <h2>Default HUDs</h2>
@@ -27,19 +27,19 @@
       <h2>Creating a custom HUD</h2>
       <p>The easy way: <a href="https://namad.github.io/visualHUD/" title="QuakeLive visualHUD">QuakeLive visualHUD</a>
       <br />
-      By hand: Check out <a href="http://quakelivehud.blogspot.com/" title="Quake Live HUD tutorial">Borgondios Quake Live HUD tutorial</a></p>
+      By hand: Check out <a href="https://quakelivehud.blogspot.com/" title="Quake Live HUD tutorial">Borgondios Quake Live HUD tutorial</a></p>
       <p>But don't forget to share your creation at this place when you are done! :-)</p>
       <h2>Why where the counters reset?</h2>
       <p><a href=".">qlhud.lifeisabug.com</a> (formerly qlhud.core.ws) has been around since April 2009 and disappeared in October 2012 (it was required to remove the sites backend code, don't even ask). In January 2013 the backend was rewritten from scratch (this time open source, <a href="https://github.com/incognico/qlhud.lifeisabug.com" title="qlhud.lifeisabug.com repository at github.com">available at github</a>) and the click and download counters were reset in the curse of the relaunch (there were at least 185000 downloads from Apr. 2009 to Oct. 2012).</p>
       <h2>In the press</h2>
          <ul>
-            <li>holysh1t.net: <a href="http://www.holysh1t.net/hosting-and-sharing-custom-quake-live-huds/" title="Platform for hosting and sharing custom Quake Live HUDs">Platform for hosting and sharing custom Quake Live HUDs</a></li>
+            <li>holysh1t.net: <a href="https://www.holysh1t.net/hosting-and-sharing-custom-quake-live-huds/" title="Platform for hosting and sharing custom Quake Live HUDs">Platform for hosting and sharing custom Quake Live HUDs</a></li>
             <!-- <li>fragster.de: <a href="http://www.fragster.de/de/esport/quake/artikel/09/04/plattform-fur-quake-live-huds_quake.html" title="Plattform f&uuml;r Quake Live-HUDs">Plattform f&uuml;r Quake Live-HUDs</a></li>
             <li>qlive.pl: <a href="http://www.qlive.pl/news/full/4822" title="Centrum wymiany HUD-ów">Centrum wymiany HUD-ów</a></li> -->
          </ul>
       <h2><a id="contact"></a>Contact</h2>
-      <p>E-mail to: qlhud&#64;life<span class="hide">-removethis-</span>isabug.com</p>
+      <p>E-mail to: <a href="mailto:qlhud@lifeisabug.com">qlhud@lifeisabug.com</a></p>
       <h2>Copyrights</h2>
-      <p>The Quake Live logo is copyright by <a href="http://www.idsoftware.com/" title="id Software">id Software, Inc.</a>, the DpQuake font is copyright by <a href="http://www.jerekdain.com/" title="Jerek Dain">Jerek Dain</a>, the CSS Stylesheet is copyright by <a href="http://core.im/" title="core.im">chris</a> (thanks!) and <a href="[% url %]" title="Custom HUDs for Quake Live">this pages</a> are copyright by nico (<a href="http://lifeisabug.com/" title="lifeisabug.com">lifeisabug.com</a>).</p>
+      <p>The Quake Live logo is copyright by <a href="https://www.idsoftware.com/" title="id Software">id Software, Inc.</a>, the DpQuake font is copyright by <a href="http://www.jerekdain.com/" title="Jerek Dain">Jerek Dain</a>, the CSS Stylesheet is copyright by chris (thanks!) and <a href="[% url %]" title="Custom HUDs for Quake Live">this pages</a> are copyright by nico.</p>
    </div>
 [% INCLUDE footer.tt %]
